@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bejelentkezés</title>
+</head>
+<body>
+
+<form id="loginForm">
+    Felhasználónév: <input type="text" id="username" name="username"><br>
+    Jelszó: <input type="password" id="password" name="password"><br><br>
+    <input type="button" value="Bejelentkezés" onclick="login()">
+</form>
+
+<script>
+    function login() {
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+        const validUsers = ['Marci', 'Dóra', 'Dóri', 'Fanni', 'Reni', 'Márk', 'Tomi'];
+
+        if(validUsers.includes(username) && password === username) {
+            window.location.href = 'chat.html'; // Átirányítás a chat oldalra
+        } else {
+            alert('Hibás felhasználónév vagy jelszó');
+        }
+    }
+</script>
+
+</body>
+</html>
